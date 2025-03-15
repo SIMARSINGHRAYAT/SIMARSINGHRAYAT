@@ -4,6 +4,12 @@
 
 ---
 
+```html
+<meta name="google-site-verification" content="iZIPOmiSXHMvJzK2AmerC4ff4TTWL3j9b47ow268jhk" />
+```
+
+---
+
 <div align="center">
   <a href="https://www.linkedin.com/in/simarsinghrayat/">
     <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
@@ -35,7 +41,7 @@
   - 🌌 Building next-gen AI-driven systems, focusing on <strong>Neural Computing & Cybernetics</strong>.<br>
   - 📚 Exploring <strong>Quantum Computing</strong>, <strong>Advanced Machine Learning</strong>, and <strong>AI Ethics</strong>.<br>
   - 🔬 <strong>4x Hackathon Champion</strong>, <strong>IEEE Author</strong>, and <strong>Research Scholar</strong>.<br>
-  - 🔥 Contributed to <strong>7+ Research Papers</strong> and <strong>5+ Patents</strong>.<br>
+  - 🔦 Contributed to <strong>7+ Research Papers</strong> and <strong>5+ Patents</strong>.<br>
   - ⚡ Innovating in <strong>Autonomous Systems</strong> and <strong>Blockchain for Secure AI</strong>.<br>
 </p>
 
