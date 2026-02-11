@@ -53,11 +53,11 @@ Focus Areas:
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=AbhishekGiri04&show_icons=true&theme=dark&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub Stats" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=SIMARSINGHRAYAT&show_icons=true&theme=dark&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub Stats" />
 </div>
 
 <div align="center">
-  <img src="https://nirzak-streak-stats.vercel.app/?user=AbhishekGiri04&theme=radical&hide_border=false" alt="GitHub Streak" />
+  <img src="https://nirzak-streak-stats.vercel.app/?user=SIMARSINGHRAYAT&theme=radical&hide_border=false" alt="GitHub Streak" />
 </div>
 
 ### 💻 Language Distribution
@@ -65,10 +65,10 @@ Focus Areas:
 <table align="center">
   <tr>
     <td width="50%" align="center">
-      <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=AbhishekGiri04&theme=github_dark" alt="Top Languages by Repository" />
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=SIMARSINGHRAYAT&theme=github_dark" alt="Top Languages by Repository" />
     </td>
     <td width="50%" align="center">
-      <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=AbhishekGiri04&theme=github_dark" alt="Top Languages by Commit" />
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=SIMARSINGHRAYAT&theme=github_dark" alt="Top Languages by Commit" />
     </td>
   </tr>
 </table>
@@ -125,7 +125,7 @@ Focus Areas:
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=AbhishekGiri04&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=SIMARSINGHRAYAT&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=150&section=footer&animation=twinkling" width="100%"/>
