@@ -9,14 +9,6 @@
   <img src="./cat.gif" alt="Animated pixel cat mascot" width="260" />
 </p>
 
-<p align="center">
-  <img src="./assets/pole.svg" alt="Pixel vertical path" width="20" height="220" />
-</p>
-
-<p align="center">
-  <img src="./monkey.gif" alt="Animated monkey sprite climbing the path" width="90" />
-</p>
-
 ---
 
 ## About Me
@@ -24,16 +16,6 @@
 Hi! I’m building, learning, and shipping small but meaningful digital experiences.
 
 This profile is a playful pixel-art space that reflects my curiosity, creativity, and a love for clean code and thoughtful design.
-
-The monkey is a visual reminder that exploration and iteration are part of the journey.
-
-<p align="center">
-  <img src="./assets/pole.svg" alt="Pixel path continuing through the profile" width="20" height="180" />
-</p>
-
-<p align="center">
-  <img src="./monkey.gif" alt="Monkey sprite continuing its route down the page" width="80" />
-</p>
 
 ---
 
@@ -60,14 +42,6 @@ The monkey is a visual reminder that exploration and iteration are part of the j
 - Express
 - Next.js
 
-<p align="center">
-  <img src="./assets/pole.svg" alt="Pixel path between sections" width="20" height="180" />
-</p>
-
-<p align="center">
-  <img src="./monkey.gif" alt="Monkey sprite between skills and project sections" width="80" />
-</p>
-
 ---
 
 ## Projects
@@ -84,14 +58,6 @@ The monkey is a visual reminder that exploration and iteration are part of the j
 - Description: Short explanation
 - Tech: List the stack
 - Repository: [GitHub repo link](https://github.com)
-
-<p align="center">
-  <img src="./assets/pole.svg" alt="Pixel path continuing through the project section" width="20" height="180" />
-</p>
-
-<p align="center">
-  <img src="./monkey.gif" alt="Monkey sprite near the project section" width="80" />
-</p>
 
 ---
 
@@ -113,14 +79,6 @@ The monkey is a visual reminder that exploration and iteration are part of the j
   - Improved developer workflows
   - Focused on quality and usability
 
-<p align="center">
-  <img src="./assets/pole.svg" alt="Pixel path continuing across the experience section" width="20" height="180" />
-</p>
-
-<p align="center">
-  <img src="./monkey.gif" alt="Monkey sprite traveling through the experience section" width="80" />
-</p>
-
 ---
 
 ## GitHub Stats
@@ -130,14 +88,6 @@ The monkey is a visual reminder that exploration and iteration are part of the j
 </p>
 
 > Replace YOUR_USERNAME with your actual GitHub username.
-
-<p align="center">
-  <img src="./assets/pole.svg" alt="Pixel path before the contact section" width="20" height="160" />
-</p>
-
-<p align="center">
-  <img src="./monkey.gif" alt="Monkey sprite reaching the contact section" width="80" />
-</p>
 
 ---
 
@@ -156,14 +106,6 @@ The monkey is a visual reminder that exploration and iteration are part of the j
 - LinkedIn: [Your LinkedIn](https://linkedin.com/in/YOUR_USERNAME)
 - Email: [you@example.com](mailto:you@example.com)
 - Portfolio: [Your website or portfolio](https://example.com)
-
-<p align="center">
-  <img src="./assets/pole.svg" alt="Final portion of the path" width="20" height="120" />
-</p>
-
-<p align="center">
-  <img src="./monkey.gif" alt="Monkey at the end of the profile path" width="80" />
-</p>
 
 ---
 
