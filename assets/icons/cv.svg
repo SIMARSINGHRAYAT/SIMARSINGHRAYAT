@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Curriculum vitae application icon">
+  <rect width="64" height="64" fill="#604a70"/>
+  <rect x="15" y="10" width="34" height="44" fill="#f1e6ff"/>
+  <rect x="22" y="18" width="20" height="6" fill="#b996d8"/>
+  <rect x="22" y="30" width="20" height="5" fill="#b996d8"/>
+  <circle cx="32" cy="40" r="7" fill="#8d68c7"/>
+</svg>

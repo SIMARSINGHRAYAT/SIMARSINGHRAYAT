@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-label="Boot screen for the Personal Portfolio OS">
+  <rect width="1200" height="260" fill="#080b10"/>
+  <rect x="20" y="20" width="1160" height="220" fill="#0f1318" stroke="#6ee7b7" stroke-width="4"/>
+  <text x="600" y="72" text-anchor="middle" fill="#e5f9f1" font-family="monospace" font-size="30" font-weight="700">PERSONAL PORTFOLIO OS</text>
+  <text x="600" y="108" text-anchor="middle" fill="#8ee7c2" font-family="monospace" font-size="16">VERSION 1.0</text>
+  <g font-family="monospace" font-size="16" fill="#d5f7ea">
+    <text x="200" y="145">[ OK ] INITIALIZING PORTFOLIO SYSTEM</text>
+    <text x="200" y="170">[ OK ] LOADING USER PROFILE</text>
+    <text x="200" y="195">[ OK ] LOADING PROJECT DATABASE</text>
+    <text x="200" y="220">[ OK ] STARTING DESKTOP</text>
+  </g>
+  <rect x="192" y="150" width="760" height="14" fill="#1f2a2f" stroke="#4ad3a2" stroke-width="2"/>
+  <rect x="192" y="150" width="620" height="14" fill="#6ee7b7"/>
+  <text x="600" y="244" text-anchor="middle" fill="#8ef0c1" font-family="monospace" font-size="18">SYSTEM READY</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Experience application icon">
+  <rect width="64" height="64" fill="#4d5d68"/>
+  <rect x="14" y="14" width="36" height="36" fill="#eaf2ff"/>
+  <path d="M22 26h20v4H22zm0 8h20v4H22zm0 8h12v4H22z" fill="#7e9cc3"/>
+  <rect x="22" y="18" width="12" height="4" fill="#6b8bb8"/>
+</svg>

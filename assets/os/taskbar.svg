@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="90" viewBox="0 0 1200 90" role="img" aria-label="Pixel-art taskbar with application shortcuts">
+  <rect width="1200" height="90" fill="#2d2b31"/>
+  <rect x="16" y="14" width="140" height="58" fill="#5cc8a8" stroke="#0d1117" stroke-width="4"/>
+  <text x="86" y="53" text-anchor="middle" fill="#0d1117" font-family="monospace" font-size="24" font-weight="700">START</text>
+  <g fill="#d9e2f2" font-family="monospace" font-size="18">
+    <rect x="190" y="18" width="96" height="52" fill="#4e5f85" stroke="#d9e2f2" stroke-width="2"/>
+    <text x="238" y="52" text-anchor="middle">BIO</text>
+    <rect x="300" y="18" width="110" height="52" fill="#53688c" stroke="#d9e2f2" stroke-width="2"/>
+    <text x="355" y="52" text-anchor="middle">RESUME</text>
+    <rect x="424" y="18" width="90" height="52" fill="#5a7099" stroke="#d9e2f2" stroke-width="2"/>
+    <text x="469" y="52" text-anchor="middle">CV</text>
+    <rect x="528" y="18" width="130" height="52" fill="#6279a5" stroke="#d9e2f2" stroke-width="2"/>
+    <text x="593" y="52" text-anchor="middle">BROWSER</text>
+  </g>
+  <text x="1120" y="40" text-anchor="end" fill="#d9e2f2" font-family="monospace" font-size="18">ONLINE</text>
+  <text x="1120" y="62" text-anchor="end" fill="#d9e2f2" font-family="monospace" font-size="14">PORTFOLIO OS v1.0</text>
+</svg>

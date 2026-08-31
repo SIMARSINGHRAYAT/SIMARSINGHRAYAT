@@ -1,14 +1,54 @@
-<a id="desktop"></a>
+#!/usr/bin/env python3
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / 'portfolio.json'
+README = ROOT / 'README.md'
+
+
+def load_data():
+    with DATA.open('r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def bullet_list(items):
+    return '\n'.join(f'- {item}' for item in items)
+
+
+def link_list(items, url_key='url'):
+    return '\n'.join(
+        f'- [{item["name"]}]({item.get(url_key, item.get("repo", "#"))}) — {item.get("description", "")}'
+        for item in items
+    )
+
+
+def project_links(projects):
+    return '\n'.join(
+        f'- [{project["name"]}]({project["repo"]}) — {project["description"]} | Demo: [{project["demo"]}]({project["demo"]}) | Status: {project["status"]}'
+        for project in projects
+    )
+
+
+def skill_block(skills):
+    lines = []
+    for category, items in skills.items():
+        lines.append(f'**{category}**: {", ".join(items)}')
+    return '\n'.join(lines)
+
+
+def render(data):
+    return f'''<a id="desktop"></a>
 
 <img src="assets/os/boot-screen.svg" alt="Pixel-art boot screen for the Personal Portfolio OS" width="100%" />
 
 # PERSONAL PORTFOLIO OS
 
-> USER: Simar Singh Rayat  
-> STATUS: ONLINE  
-> ROLE: Software Engineer  
-> LOCATION: India  
-> VERSION: 1.0
+> USER: {data['name']}  
+> STATUS: {data['status']}  
+> ROLE: {data['role']}  
+> LOCATION: {data['location']}  
+> VERSION: {data['version']}
 
 ## SYSTEM BOOT SEQUENCE
 
@@ -62,7 +102,7 @@ SYSTEM READY
     <td width="15%" align="center"><a href="#education">EDUCATION</a></td>
     <td width="18%" align="center"><a href="#experience">EXPERIENCE</a></td>
     <td width="12%" align="center"><a href="#other">OTHER</a></td>
-    <td align="right"><strong>ONLINE</strong> • <em>PORTFOLIO OS v1.0</em></td>
+    <td align="right"><strong>ONLINE</strong> • <em>PORTFOLIO OS v{data['version']}</em></td>
   </tr>
 </table>
 
@@ -71,7 +111,7 @@ SYSTEM READY
 
 ### USER
 
-**Simar Singh Rayat**  
+**{data['name']}**  
 Developer / Creator / Builder
 
 ### APPLICATIONS
@@ -88,10 +128,10 @@ Developer / Creator / Builder
 ### SYSTEM
 
 - [About this Portfolio OS](#system-status)
-- [GitHub](https://github.com/SIMARSINGHRAYAT)
-- [LinkedIn](https://www.linkedin.com/in/simarsinghrayat)
-- [Email](mailto:simar@example.com)
-- [Resume Download](assets/resume/Simar_Resume.pdf)
+- [GitHub]({data['github']})
+- [LinkedIn]({data['linkedin']})
+- [Email]({data['email']})
+- [Resume Download]({data['resume']})
 
 </details>
 
@@ -111,33 +151,25 @@ Developer / Creator / Builder
             <img src="assets/icons/bio.svg" alt="Pixel-art portrait icon for the Bio section" width="120" />
           </td>
           <td valign="top">
-            <h3>Simar Singh Rayat</h3>
-            <p><strong>Developer / Builder / Creator</strong></p>
-            <p>I build tools, products, and experiences that make complex ideas feel simple. I enjoy turning curiosity into crafted systems that solve real problems.</p>
-            <p>I design, prototype, and ship practical digital experiences that blend clean engineering with thoughtful product thinking. My work sits at the intersection of code, systems, and user experience.</p>
+            <h3>{data['name']}</h3>
+            <p><strong>{data['title']}</strong></p>
+            <p>{data['intro']}</p>
+            <p>{data['bio']}</p>
           </td>
         </tr>
       </table>
 
       <h4>INTERESTS</h4>
-      - Product engineering
-- Web platform design
-- Systems thinking
-- Learning and experimentation
+      {bullet_list(data['interests'])}
 
       <h4>CURRENT FOCUS</h4>
-      - Frontend systems
-- Backend architecture
-- Developer tooling
-- Portfolio-grade UX
+      {bullet_list(data['focusAreas'])}
 
       <h4>GOALS</h4>
-      - Build useful, maintainable software
-- Keep learning with practical, high-impact work
-- Contribute to products that improve everyday workflows
+      {bullet_list(data['goals'])}
 
       <h4>PERSONAL PHILOSOPHY</h4>
-      <p>Build with clarity, ship with intention, and leave every system easier to understand than it was before.</p>
+      <p>{data['philosophy']}</p>
 
       <p><a href="#desktop">← BACK TO DESKTOP</a></p>
     </td>
@@ -155,8 +187,8 @@ Developer / Creator / Builder
   <tr>
     <td>
       <p><strong>Professional Summary</strong></p>
-      <p>I design, prototype, and ship practical digital experiences that blend clean engineering with thoughtful product thinking. My work sits at the intersection of code, systems, and user experience.</p>
-      <p><a href="assets/resume/Simar_Resume.pdf"><strong>[ DOWNLOAD RESUME ]</strong></a></p>
+      <p>{data['bio']}</p>
+      <p><a href="{data['resume']}"><strong>[ DOWNLOAD RESUME ]</strong></a></p>
       <p><strong>Highlights</strong></p>
       <ul>
         <li>Product-minded software development</li>
@@ -180,34 +212,29 @@ Developer / Creator / Builder
   <tr>
     <td>
       <h4>PERSONAL INFORMATION</h4>
-      <p><strong>Name:</strong> Simar Singh Rayat<br>
-      <strong>Role:</strong> Software Engineer<br>
-      <strong>Location:</strong> India<br>
-      <strong>Portfolio:</strong> <a href="https://github.com/SIMARSINGHRAYAT">GitHub Profile</a></p>
+      <p><strong>Name:</strong> {data['name']}<br>
+      <strong>Role:</strong> {data['role']}<br>
+      <strong>Location:</strong> {data['location']}<br>
+      <strong>Portfolio:</strong> <a href="{data['portfolio']}">GitHub Profile</a></p>
 
       <details>
       <summary><strong>EDUCATION</strong></summary>
-      - University / Program — Computer Science / Applied Engineering (2019 – 2023)
+      {bullet_list([f"{item['institution']} — {item['program']} ({item['dates']})" for item in data['education']])}
       </details>
 
       <details>
       <summary><strong>EXPERIENCE</strong></summary>
-      - Independent / Product Work — Developer & Builder (2023 – Present)
+      {bullet_list([f"{item['organization']} — {item['position']} ({item['dates']})" for item in data['experience']])}
       </details>
 
       <details>
       <summary><strong>SKILLS</strong></summary>
-      **Languages**: Python, JavaScript, TypeScript, SQL, Markdown
-**Web**: HTML, CSS, REST APIs, GitHub Pages
-**Frameworks**: React, Node.js, Express, Next.js
-**Tools**: Git, VS Code, Figma, Docker
-**Databases**: PostgreSQL, Supabase, MongoDB
-**Platforms**: GitHub, Linux, Vercel, Cloud hosting
+      {skill_block(data['skills'])}
       </details>
 
       <details>
       <summary><strong>PROJECTS</strong></summary>
-      - [Personal Portfolio OS](https://github.com/SIMARSINGHRAYAT) — A retro-style GitHub profile experience designed as a fictional desktop environment. | Demo: [https://github.com/SIMARSINGHRAYAT](https://github.com/SIMARSINGHRAYAT) | Status: Active
+      {project_links(data['projects'])}
       </details>
 
       <p><a href="#desktop">← BACK TO DESKTOP</a></p>
@@ -227,19 +254,13 @@ Developer / Creator / Builder
     <td>
       <p><strong>←  →  ⟳</strong> &nbsp; <strong>ADDRESS:</strong> https://github.com/SIMARSINGHRAYAT</p>
       <h4>PROFESSIONAL</h4>
-      - [GitHub](https://github.com/SIMARSINGHRAYAT) — Repositories and experiments
-- [LinkedIn](https://www.linkedin.com/in/simarsinghrayat) — Professional profile
-- [Portfolio](https://github.com/SIMARSINGHRAYAT?tab=repositories) — Project collection
-- [Email](mailto:simar@example.com) — Contact and collaboration
+      {link_list(data['browserLinks'])}
 
       <h4>BROWSER LINKS</h4>
       <pre>
 ICON | NAME | DESCRIPTION | URL
 ---- | ---- | ----------- | ---
-🔗 | GitHub | Repositories and experiments | https://github.com/SIMARSINGHRAYAT
-💼 | LinkedIn | Professional profile | https://www.linkedin.com/in/simarsinghrayat
-📁 | Portfolio | Project collection | https://github.com/SIMARSINGHRAYAT?tab=repositories
-📧 | Email | Contact and collaboration | mailto:simar@example.com
+{chr(10).join(f"{item['icon']} | {item['name']} | {item['description']} | {item['url']}" for item in data['browserLinks'])}
       </pre>
 
       <p><a href="#desktop">← BACK TO DESKTOP</a></p>
@@ -257,7 +278,7 @@ ICON | NAME | DESCRIPTION | URL
   </tr>
   <tr>
     <td>
-      <p><strong>[ UNLOCKED ]</strong> Built systems with purpose<br><em>Created practical software products focused on usability and maintainability.</em><br><strong>DATE:</strong> 2025<br><strong>VERIFICATION:</strong> Self-verified</p><p><strong>[ UNLOCKED ]</strong> Portfolio engineering<br><em>Designed a polished digital portfolio experience within GitHub's constraints.</em><br><strong>DATE:</strong> 2026<br><strong>VERIFICATION:</strong> Repository showcase</p><p><strong>[ UNLOCKED ]</strong> Continuous learning<br><em>Explored modern development stacks and platform thinking through hands-on work.</em><br><strong>DATE:</strong> Ongoing<br><strong>VERIFICATION:</strong> Active projects</p>
+      {''.join(f'''<p><strong>[ UNLOCKED ]</strong> {item['title']}<br><em>{item['description']}</em><br><strong>DATE:</strong> {item['date']}<br><strong>VERIFICATION:</strong> {item['verified']}</p>''' for item in data['achievements'])}
       <p><a href="#desktop">← BACK TO DESKTOP</a></p>
     </td>
   </tr>
@@ -275,12 +296,10 @@ ICON | NAME | DESCRIPTION | URL
     <td>
       <table border="1" cellpadding="8" cellspacing="0" width="100%">
         <tr><th>Institution</th><th>Program</th><th>Degree</th><th>Dates</th></tr>
-        <tr><td>University / Program</td><td>Computer Science / Applied Engineering</td><td>Bachelor's / Equivalent</td><td>2019 – 2023</td></tr>
+        {''.join(f'''<tr><td>{item['institution']}</td><td>{item['program']}</td><td>{item['degree']}</td><td>{item['dates']}</td></tr>''' for item in data['education'])}
       </table>
       <p><strong>Key outcomes:</strong></p>
-      - Core software engineering principles
-- Project-based problem solving
-- Team collaboration and product thinking
+      {bullet_list(data['education'][0]['highlights'])}
       <p><a href="#desktop">← BACK TO DESKTOP</a></p>
     </td>
   </tr>
@@ -296,7 +315,7 @@ ICON | NAME | DESCRIPTION | URL
   </tr>
   <tr>
     <td>
-      <p><strong>Independent / Product Work</strong> — Developer & Builder<br>2023 – Present</p><ul><li>Designed and implemented product-focused digital builds</li><li>Worked across the stack to improve user experience and maintainability</li><li>Iterated on prototypes and portfolio-ready systems</li></ul><p><strong>Technologies:</strong> HTML, Markdown, Git, Python, JavaScript, Web APIs</p>
+      {''.join(f'''<p><strong>{item['organization']}</strong> — {item['position']}<br>{item['dates']}</p><ul>{''.join(f'<li>{responsibility}</li>' for responsibility in item['responsibilities'])}</ul><p><strong>Technologies:</strong> {', '.join(item['technologies'])}</p>''' for item in data['experience'])}
       <p><a href="#desktop">← BACK TO DESKTOP</a></p>
     </td>
   </tr>
@@ -313,13 +332,10 @@ ICON | NAME | DESCRIPTION | URL
   <tr>
     <td>
       <h4>HOBBIES & INTERESTS</h4>
-      - Product engineering
-- Web platform design
-- Systems thinking
-- Learning and experimentation
+      {bullet_list(data['interests'])}
 
       <h4>PROJECTS</h4>
-      <p><strong>Personal Portfolio OS</strong><br>A retro-style GitHub profile experience designed as a fictional desktop environment.<br><strong>Stack:</strong> GitHub Markdown, SVG, HTML, JSON<br><a href="https://github.com/SIMARSINGHRAYAT">Repository</a> • <a href="https://github.com/SIMARSINGHRAYAT">Demo</a> • <strong>Status:</strong> Active</p>
+      {''.join(f'''<p><strong>{project['name']}</strong><br>{project['description']}<br><strong>Stack:</strong> {project['stack']}<br><a href="{project['repo']}">Repository</a> • <a href="{project['demo']}">Demo</a> • <strong>Status:</strong> {project['status']}</p>''' for project in data['projects'])}
 
       <h4>CURRENTLY LEARNING</h4>
       <p>Practical systems design, polished web interfaces, and product-minded engineering workflows.</p>
@@ -339,13 +355,13 @@ ICON | NAME | DESCRIPTION | URL
   </tr>
   <tr>
     <td>
-      <p><strong>OS:</strong> PERSONAL PORTFOLIO OS<br>
-      <strong>VERSION:</strong> 1.0<br>
-      <strong>USER:</strong> Simar Singh Rayat<br>
-      <strong>STATUS:</strong> ONLINE<br>
-      <strong>MODE:</strong> BUILDING<br>
-      <strong>CURRENT FOCUS:</strong> Full-stack product engineering</p>
-      <p><a href="https://github.com/SIMARSINGHRAYAT">[ VIEW GITHUB ]</a> &nbsp; <a href="https://www.linkedin.com/in/simarsinghrayat">[ LINKEDIN ]</a> &nbsp; <a href="mailto:simar@example.com">[ CONTACT ]</a></p>
+      <p><strong>OS:</strong> {data['system']}<br>
+      <strong>VERSION:</strong> {data['version']}<br>
+      <strong>USER:</strong> {data['name']}<br>
+      <strong>STATUS:</strong> {data['status']}<br>
+      <strong>MODE:</strong> {data['mode']}<br>
+      <strong>CURRENT FOCUS:</strong> {data['focus']}</p>
+      <p><a href="{data['github']}">[ VIEW GITHUB ]</a> &nbsp; <a href="{data['linkedin']}">[ LINKEDIN ]</a> &nbsp; <a href="{data['email']}">[ CONTACT ]</a></p>
       <p><a href="#desktop">← BACK TO DESKTOP</a></p>
     </td>
   </tr>
@@ -355,10 +371,10 @@ ICON | NAME | DESCRIPTION | URL
 
 ## CONTACT & SOCIAL LINKS
 
-- [GitHub](https://github.com/SIMARSINGHRAYAT)
-- [LinkedIn](https://www.linkedin.com/in/simarsinghrayat)
-- [Email](mailto:simar@example.com)
-- [Resume Download](assets/resume/Simar_Resume.pdf)
+- [GitHub]({data['github']})
+- [LinkedIn]({data['linkedin']})
+- [Email]({data['email']})
+- [Resume Download]({data['resume']})
 
 ## UPDATE YOUR PROFILE
 
@@ -381,3 +397,14 @@ Update the name, role, links, projects, education, and browser links there to ke
 </div>
 
 <p align="center"><a href="#desktop">[ RETURN TO DESKTOP ]</a></p>
+'''
+
+
+def main():
+    data = load_data()
+    README.write_text(render(data), encoding='utf-8')
+    print(f'Wrote {README}')
+
+
+if __name__ == '__main__':
+    main()
