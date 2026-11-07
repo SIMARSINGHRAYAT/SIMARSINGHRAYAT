@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 16" width="100%" height="16" role="img" aria-label="Animated Neon Divider">
+  <defs>
+    <linearGradient id="divGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="1" />
+      <stop offset="75%" stop-color="#c084fc" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0" />
+    </linearGradient>
+    <filter id="divGlow" x="-20%" y="-100%" width="140%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <style>
+    @keyframes sweep {
+      0% { transform: translateX(-400px); }
+      50% { transform: translateX(400px); }
+      100% { transform: translateX(-400px); }
+    }
+    .beam {
+      animation: sweep 6s ease-in-out infinite;
+    }
+  </style>
+  <!-- Background subtle track -->
+  <line x1="0" y1="8" x2="900" y2="8" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.6"/>
+  <!-- Gliding neon energy beam -->
+  <g class="beam">
+    <ellipse cx="450" cy="8" rx="220" ry="2.5" fill="url(#divGrad)" filter="url(#divGlow)" />
+    <circle cx="450" cy="8" r="3" fill="#ffffff" filter="url(#divGlow)">
+      <animate attributeName="r" values="2.5;4;2.5" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>
